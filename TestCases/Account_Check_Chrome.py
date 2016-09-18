@@ -6,6 +6,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
+import os
+
 
 class Account_Check_Chrome(unittest.TestCase):
     def setUp(self):
@@ -14,7 +16,9 @@ class Account_Check_Chrome(unittest.TestCase):
         self.driver.set_window_size(1120, 550)
         
     def test_url_Account(self):
-        with open('E:\DoNetStudy\AutoUIPython\users.csv', 'rU') as UsersInfoFile:
+        Par_Dir=os.path.join(os.path.dirname(__file__), os.pardir)
+        #Base_Dir=os.path.dirname(__file__)
+        with open(Par_Dir, 'rU') as UsersInfoFile:
                         reader=csv.reader(UsersInfoFile)
                         next(reader, None)  # skip the headers
                         for row in reader:

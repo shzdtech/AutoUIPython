@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
+import os
 
 class UserDetail_Check_Chrome(unittest.TestCase):
     def setUp(self):

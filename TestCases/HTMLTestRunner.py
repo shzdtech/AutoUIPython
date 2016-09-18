@@ -96,6 +96,7 @@ import sys
 import time
 import unittest
 from xml.sax import saxutils
+import os
 
 
 # ------------------------------------------------------------------------

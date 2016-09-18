@@ -1,5 +1,5 @@
 import unittest
-import sys,os
+import os
 import HTMLTestRunner
 import Account_Check_Chrome
 import Exchange_Test_Chrome
@@ -19,12 +19,13 @@ class TestSuite(unittest.TestCase):
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(OptionOTC_Test_Chrome.OptionOTC_Test_Chrome))
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(OptionEx_Test_Chrome.OptionEx_Test_Chrome))
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(Account_Check_Chrome.Account_Check_Chrome))
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TradeInfo_Check_Chrome.TradeInfo_Check_Chrome))
+    
     
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(UserDetail_Check_Chrome.UserDetail_Check_Chrome))
     '''
-    
-    outfile = open("E:\\DoNetStudy\\AutoUIPython\\TestReport.html", "wb")
+    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TradeInfo_Check_Chrome.TradeInfo_Check_Chrome))
+    Result_File=os.path.join(os.path.abspath('.'), os.pardir, 'TestReport.html')
+    outfile = open(Result_File, "wb")
     runner = HTMLTestRunner.HTMLTestRunner(stream=outfile, title='ci.shzdtech.com Test Report', description='UI Test Report - Chrome' )
     runner.run(suite)
     outfile.close()
